@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConsentVault - Login</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <title>ConsentVault – PageName</title>
+  <link rel="stylesheet" href="css/sidebar.css" />
+  
+</head>
+<body>
+<div class="layout-wrapper">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar"></aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Your page content goes here -->
+    </main>
+
+  </div>
+
+  <!-- 🌟 Header -->
+  <header class="main-header">
+    <div class="logo">ConsentVault</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- 💻 Login Card -->
+  <main class="login-wrapper">
+    <div class="login-container">
+      <h2>Welcome to ConsentVault</h2>
+      <p>Please log in to continue</p>
+      
+      <form id="loginForm">
+        <label for="username">Username</label>
+        <input id="username" type="text" required />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" required />
+
+        <button type="submit">Login</button>
+        <p class="error-msg" id="errorMsg"></p>
+      </form>
+
+      <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+
+      <div id="notifyBox" class="notify hidden">
+        ✅ You're logged in. Don’t forget to add your latest data sharing activity!
+      </div>
+    </div>
+  </main>
+
+  <!-- 🎯 Footer -->
+  <footer class="main-footer">
+    <p>© 2025 ConsentVault. Made with 💙 by AnohbaJhd.</p>
+  </footer>
+
+  <script src="../js/sidebar.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

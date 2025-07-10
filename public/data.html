@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ConsentVault — All Consents</title>
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/data.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+     <nav>
+        <h2>ConsentVault</h2>
+        <a href="main.html">🏠 Home</a>
+        <a href="index.html">➕ Add Consent</a>
+        <a href="dashboard.html">📄 Your Consents</a>
+        <a href="trash.html" class="active">🗑️ Trash</a>
+        <a href="data.html">📊 Data</a>
+        <a href="#" onclick="logout()">🔐 Logout</a>
+      </nav>
+  </aside>
+
+  <!-- Header -->
+  <header class="topbar">
+    <h1>All Consents</h1>
+    <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Chart Section -->
+    <section class="chart-section">
+      <h2>Consent Types Overview</h2>
+      <canvas id="typeChart" width="400" height="200"></canvas>
+    </section>
+
+    <!-- Table Section -->
+    <section class="data-table-section">
+      <table id="consentTable">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Data Shared</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be injected here -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Export Buttons -->
+    <div class="export-buttons">
+      <button id="export-json">Export as JSON</button>
+      <button id="export-csv">Export as CSV</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      © 2025 ConsentVault. All rights reserved.
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/data.js"></script>
+</body>
+</html>

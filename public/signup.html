@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConsentVault - Sign Up</title>
+  <link rel="stylesheet" href="css/signup.css" />
+</head>
+<body>
+
+  <!-- 🌟 Header -->
+  <header class="site-header">
+    <div class="container">
+      <h1><a href="index.html">ConsentVault</a></h1>
+    </div>
+  </header>
+
+  <!-- ✍️ Signup Form -->
+  <main class="signup-container">
+    <h2>Create Account</h2>
+    <form id="signupForm">
+      <label for="newUsername">Username</label>
+      <input id="newUsername" type="text" required />
+
+      <label for="newPassword">Password</label>
+      <input id="newPassword" type="password" required />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" type="password" required />
+
+      <button type="submit">Sign Up</button>
+      <p class="error-msg" id="signupError"></p>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </main>
+
+  <!-- 🔔 Notification -->
+  <div id="notifyBox" class="notify hidden">
+    ✅ You're logged in. Don’t forget to add your latest data sharing activity!
+  </div>
+
+  <!-- 📌 Footer -->
+  <footer class="site-footer">
+    <p>© 2025 ConsentVault. Designed with 🩵 by Anohba.</p>
+  </footer>
+
+  <script src="js/signup.js"></script>
+</body>
+</html>

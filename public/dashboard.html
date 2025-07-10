@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ConsentVault – Dashboard</title>
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <div class="layout-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+       <nav>
+        <h2>ConsentVault</h2>
+        <a href="main.html">🏠 Home</a>
+        <a href="index.html">➕ Add Consent</a>
+        <a href="dashboard.html">📄 Your Consents</a>
+        <a href="trash.html" class="active">🗑️ Trash</a>
+        <a href="data.html">📊 Data</a>
+        <a href="#" onclick="logout()">🔐 Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Header OUTSIDE of main -->
+    <header class="topbar">
+      <h1>Your Dashboard</h1>
+      <p class="welcome">Welcome, <span id="usernamePlaceholder"></span>!</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="dashboard-section">
+        <h2>Saved Consents</h2>
+        <div class="table-wrapper">
+          <table id="consentTable">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Data Shared</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS will inject rows here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>© 2025 ConsentVault. Built with privacy by Zenarch.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
