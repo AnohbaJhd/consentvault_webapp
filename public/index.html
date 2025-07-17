@@ -1,103 +1,115 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
+  <!DOCTYPE html>
+  <html>
+    <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ConsentVault – Add Consent</title>
-  <link rel="stylesheet" href="css/sidebar.css" />
   <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
+<header class="top-nav">
+  <div class="nav-left">ConsentVault</div>
+  <p class="tagline">Your privacy, your control.</p>
+  <nav class="nav-right">
+    <a href="main.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="form.html">Add Consent</a>
+    <a href="/logout">Logout</a>
+  </nav>
+</header>
+
   <div class="layout-wrapper">
-    <!-- Left Sidebar -->
-    <aside class="sidebar">
-       <nav>
-        <h2>ConsentVault</h2>
-        <a href="main.html">🏠 Home</a>
-        <a href="index.html">➕ Add Consent</a>
-        <a href="dashboard.html">📄 Your Consents</a>
-        <a href="data.html">📊 All Data</a>
-        <a href="trash.html" class="active">🗑️ Trash</a>
-        <a href="#" onclick="logout()">🔐 Logout</a>
-      </nav>
-    </aside>
-
-    <!-- Main Area -->
     <main class="main-area">
-      <!-- Greeting Section -->
-      <section class="welcome-panel">
-        <h1>Welcome back, <span id="usernamePlaceholder">Zelda</span>!</h1>
-        <p>Track where your data has been shared — simply & securely.</p>
+  <section class="welcome-panel">
+    <h1>Welcome back!</h1>
+    <p>Track where your data has been shared — simply & securely.</p>
 
-        <!-- Dark Mode Toggle -->
-        <div class="theme-toggle">
-          <label>
-            <input type="checkbox" id="darkToggle" />
-            Dark Mode
-          </label>
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle">
+      <label>
+        <input type="checkbox" id="darkToggle" />
+        Dark Mode
+      </label>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Search service or data..." />
+      <select id="typeFilter">
+        <option value="Verbal">Type of consent</option>
+        <option value="Verbal">Verbal</option>
+        <option value="Form">Form</option>
+        <option value="Website">Website</option>
+      </select>
+    </div>
+
+    <!-- 2-Column Row -->
+    <div class="content-row">
+      <!-- Consent Form -->
+      <aside class="form-panel">
+        <div class="form-card">
+          <h2>Add New Consent</h2>
+          <p>Fill out the form to log a new data-sharing consent.</p>
+
+          <form id="consentForm">
+            <input type="hidden" id="consentId" />
+
+            <label for="service">Service/Platform Name</label>
+            <input id="service" type="text" placeholder="e.g. Shop ABC" required />
+
+            <label for="consentType">Type of Consent</label>
+            <select id="consentType" required>
+              <option value="Verbal">All Types</option>
+              <option value="Verbal">Verbal</option>
+              <option value="Form">Form Filling</option>
+              <option value="Website">Website</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <label for="data">Data Shared</label>
+            <input id="data" type="text" placeholder="e.g. Email, Phone" required />
+
+            <label for="date">Date of Consent</label>
+            <input id="date" type="date" />
+
+            <label for="notes">Conditions/Notes</label>
+            <textarea id="notes" placeholder="Any special notes or conditions"></textarea>
+
+            <button type="submit">Save Consent</button>
+          </form>
         </div>
-
-        <!-- Filter Bar -->
-        <div class="filter-bar">
-          <input type="text" id="searchInput" placeholder="Search service or data..." />
-          <select id="typeFilter">
-            <option value="">All Types</option>
-            <option value="Verbal">Verbal</option>
-            <option value="Form">Form</option>
-            <option value="Website">Website</option>
-          </select>
-
-
-
-
-        </div>
-
-
-    <!-- Right Consent Form -->
-    <aside class="form-panel">
-      <div class="form-card">
-        <h2>Add New Consent</h2>
-        <p>Fill out the form to log a new data-sharing consent.</p>
-
-        <form id="consentForm">
-          <input type="hidden" id="consentId" />
-
-          <label for="service">Service/Platform Name</label>
-          <input id="service" type="text" placeholder="e.g. Shop ABC" required />
-
-          <label for="consentType">Type of Consent</label>
-          <select id="consentType" required>
-            <option value="">Select one</option>
-            <option value="Verbal">Verbal</option>
-            <option value="Form">Form Filling</option>
-            <option value="Website">Website</option>
-            <option value="Other">Other</option>
-          </select>
-
-          <label for="data">Data Shared</label>
-          <input id="data" type="text" placeholder="e.g. Email, Phone" required />
-
-          <label for="date">Date of Consent</label>
-          <input id="date" type="date" />
-
-          <label for="notes">Conditions/Notes</label>
-          <textarea id="notes" placeholder="Any special notes or conditions"></textarea>
-
-          <button type="submit">Save Consent</button>
-        </form>
-      </div>
-    </aside>
+      </aside>
+      <!-- Cards beside form -->
+  <div class="right-cards-container">
+    <div class="card">
+      <img src="images/f11.svg" alt="Mindful Data">
+      <p>“Your data is your story — make sure you write it well.”</p>
+    </div>
+    <div class="card">
+      <img src="images/4.png" alt="Privacy First">
+      <p>“Privacy is not an option, it’s a right.”</p>
+    </div>
+    <div class="card">
+      <img src="images/p3.svg" alt="Data Protection">
+      <p>“Protect your data like you protect your identity.”</p>
+    </div>
   </div>
+</div>
 
+      
 
-
-        <!-- Card Display -->
-        <div id="cardContainer"></div>
-      </section>
-    </main>
+    <!-- Cards will display below if needed -->
+    <div id="cardContainer"></div>
+  </section>
+</main>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <p>© 2025 ConsentVault. Designed with 💙 by AnohbaJhd.</p>
+  <footer class="main-footer">
+    <p>© 2025 ConsentVault. Designed with care by AnohbaJhd.</p>
+    <div class="footer-links">
+          <a href="#">Privacy Policy</a> • 
+          <a href="#">Terms</a> • 
+          <a href="#">Contact</a>
+        </div>
   </footer>
 
   <script src="../js/sidebar.js"></script>

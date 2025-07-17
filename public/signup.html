@@ -2,48 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ConsentVault - Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ConsentVault – Sign Up</title>
   <link rel="stylesheet" href="css/signup.css" />
 </head>
 <body>
 
   <!-- 🌟 Header -->
-  <header class="site-header">
-    <div class="container">
-      <h1><a href="index.html">ConsentVault</a></h1>
-    </div>
+  <header class="main-header">
+    <div class="logo">ConsentVault</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+    </nav>
   </header>
 
-  <!-- ✍️ Signup Form -->
-  <main class="signup-container">
-    <h2>Create Account</h2>
+  <!-- 🧾 Signup Section -->
+  <main class="signup-wrapper centered">
+  <div class="signup-box">
+    <h1 class="signup-heading">Sign up to ConsentVault</h1>
+    <p class="signup-subtext">Securely track where your data is shared</p>
+
+   <div class="google-button-container">
+  <button class="pretty-google-btn">
+    <img src="images/s2.svg" alt="Google icon" />
+    <span>Continue with Google</span>
+  </button>
+</div>
+
+    <div class="divider"><span>or</span></div>
+
     <form id="signupForm">
-      <label for="newUsername">Username</label>
-      <input id="newUsername" type="text" required />
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Your username" required />
 
-      <label for="newPassword">Password</label>
-      <input id="newPassword" type="password" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password" required />
 
-      <label for="confirmPassword">Confirm Password</label>
-      <input id="confirmPassword" type="password" required />
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" placeholder="Confirm password" required />
 
-      <button type="submit">Sign Up</button>
-      <p class="error-msg" id="signupError"></p>
+      <button type="submit" class="submit-btn">Sign Up</button>
     </form>
-    <p>Already have an account? <a href="login.html">Login here</a></p>
-  </main>
 
-  <!-- 🔔 Notification -->
-  <div id="notifyBox" class="notify hidden">
-    ✅ You're logged in. Don’t forget to add your latest data sharing activity!
+    <p class="login-redirect">Already have an account? <a href="login.html">Log in</a></p>
   </div>
+</main>
 
-  <!-- 📌 Footer -->
-  <footer class="site-footer">
-    <p>© 2025 ConsentVault. Designed with 🩵 by Anohba.</p>
-  </footer>
 
-  <script src="js/signup.js"></script>
+
+  <!-- 🦶 Footer -->
+  <footer class="main-footer">
+        <p>© 2025 ConsentVault. Built with care by AnohbaJhd.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a> • 
+          <a href="#">Terms</a> • 
+          <a href="#">Contact</a>
+        </div>
+      </footer>
+
+  <script src="js/signup.js" defer></script>
 </body>
 </html>

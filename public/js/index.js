@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const userId = localStorage.getItem("user_id");
-  const username = localStorage.getItem("loggedInUser") || "User";
-  if (!userId || localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-    return;
+  const username = localStorage.getItem("loggedInUser") || "User"; 
+   if (!userId) {
+      window.location.href = 'login.html';
   }
 
   // Greet user

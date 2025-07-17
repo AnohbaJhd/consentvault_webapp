@@ -2,6 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".main-header h1");
   const tagline = document.querySelector(".tagline");
   const user = localStorage.getItem("loggedInUser");
+  const userId = localStorage.getItem('user_id');
+if (!userId) {
+  window.location.href = 'login.html';
+}
+
 
   // 👋 Personalized Welcome (optional)
   if (user && document.getElementById("usernamePlaceholder")) {

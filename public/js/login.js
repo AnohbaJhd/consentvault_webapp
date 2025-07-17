@@ -1,36 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
   const userId = localStorage.getItem("user_id");
-  if (!userId) {
-    window.location.href = "login.html";
+  if (userId) {
+    window.location.href = "dashboard.html";
   }
 });
 
-
-
-
-document.getElementById('loginForm').addEventListener('submit', function (e) {
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const username = document.getElementById('username').value.trim();
-  const password = document.getElementById('password').value.trim();
-  const errorMsg = document.getElementById('errorMsg');
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  // Simple auth demo — update with real credentials check later
-  if (username === 'admin' && password === 'consent123') {
-    localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('loggedInUser', username);
+  try {
+    const res = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password })
+    });
 
-    // Show notification
-    const notifyBox = document.getElementById('notifyBox');
-    notifyBox.classList.remove('hidden');
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "Login failed");
 
-    // Hide after 4 seconds and redirect
-    setTimeout(() => {
-      notifyBox.classList.add('hidden');
-      window.location.href = 'index.html';
-    }, 4000);
-  } else {
-    errorMsg.textContent = 'Invalid username or password';
-    errorMsg.style.display = 'block';
+    localStorage.setItem("user_id", data.user_id);
+    localStorage.setItem("loggedInUser", data.username);
+
+    alert("Login successful ✅");
+    window.location.href = "dashboard.html";
+
+  } catch (err) {
+    alert("❌ " + err.message);
   }
 });

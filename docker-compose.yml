@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  consentvault:
+    build: .                     # 👈 This tells Docker Compose to use the Dockerfile in this folder
+    container_name: consentvault-app
+    ports:
+      - "3000:3000"              # 👈 Exposes your app on localhost:3000
+    volumes:
+      - .:/app                   # 👈 Mounts your current folder into the container
+    command: sh -c "npm install && node server.js"

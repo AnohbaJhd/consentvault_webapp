@@ -4,51 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ConsentVault – Welcome</title>
-  <link rel="stylesheet" href="css/sidebar.css" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-  <div class="layout-wrapper">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-       <nav>
-        <h2>ConsentVault</h2>
-        <a href="main.html">🏠 Home</a>
-        <a href="dashboard.html">📄 Your Consents</a>
-        <a href="index.html">➕ Add Consent</a>
-        <a href="data.html">📊 All Data</a>
-        <a href="trash.html" class="active">🗑️ Trash</a>
-        <a href="#" onclick="logout()">🔐 Logout</a>
-      </nav>
-    </aside>
 
+  <header class="top-nav">
+       <div class="nav-left">ConsentVault</div>
+         <p class="tagline">Your privacy, your control.</p>
+      <nav class="nav-right">
+        <a href="main.html">Home</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="form.html">Add Consent</a>
+          <a href="/logout">Logout</a>
+        </nav>
+     </header>
+
+  <div class="layout-wrapper">
     <!-- Main Content -->
     <main class="main-content">
-      <header class="main-header">
-        <h1>ConsentVault</h1>
-        <p class="tagline">Your privacy, your control.</p>
-      </header>
+      <section class="hero-section">
+  <div class="hero-text">
+    <h1>Track Your Data Sharing, Confidently</h1>
+    <p>Your personal vault for managing data-sharing consents — secure, simple, and yours.</p>
+    <div class="hero-buttons">
+      <a href="signup.html" class="btn btn-primary">Get Started</a>
+      <a href="login.html" class="btn btn-secondary">Already a user?</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="images/p2.svg" alt="Vault Illustration">
+  </div>
+  <div class="hero-img">
+  <img src="images/p6.svg" alt="Vault Illustration" />
+</div>
 
-      <section class="hero">
-        <img src="../assets/vault-hero.svg" alt="Vault illustration" class="hero-img">
-        <h2>Track Your Data Sharing, Confidently</h2>
-        <p>Your personal vault for managing data-sharing consents — secure, simple, and yours.</p>
-        <div class="actions">
-          <a href="signup.html" class="btn">Get Started</a>
-          <a href="login.html" class="btn secondary">Already a user?</a>
-        </div>
-      </section>
 
-      <section class="about">
-        <h3>About ConsentVault</h3>
-        <p>We believe your data should always be in your control. ConsentVault gives you the tools to track and manage your digital consents in one place — private, transparent, and user-first.</p>
-      </section>
+</section>
 
-      <section class="testimonials">
-        <h3>What Users Say</h3>
-        <blockquote>"ConsentVault helped me track my consents across 10+ platforms. It's a lifesaver!" – Zara M.</blockquote>
-      </section>
+<section class="features-section">
+  <h2>Why ConsentVault?</h2>
+  <div class="feature-cards">
+    <div class="card">
+      <h3>🔒 Private by Design</h3>
+      <p>Your data is stored securely and only you can access or revoke consents.</p>
+    </div>
+    <div class="card">
+      <h3>🧠 Full Control</h3>
+      <p>See where your data has been shared and who has access at any time.</p>
+    </div>
+    <div class="card">
+      <h3>⚡ Simple & Transparent</h3>
+      <p>ConsentVault keeps it clear — no jargon, no confusion, just control.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about-section with-image">
+  <div class="about-img">
+    <img src="images/p1.svg" alt="About Illustration">
+  </div>
+  <div class="about-content">
+    <h2>About ConsentVault</h2>
+    <p>We believe your data should always be in your control. ConsentVault gives you the tools to track and manage your digital consents in one place — private, transparent, and user-first.</p>
+  </div>
+</section>
+
+
+     <section class="testimonial-section">
+  <h2>What Users Say</h2>
+  <blockquote>
+    “ConsentVault helped me track my consents across 10+ platforms. It’s a lifesaver!”<br>
+    <span>— Zara M.</span>
+  </blockquote>
+</section>
+
 
       <footer class="main-footer">
         <p>© 2025 ConsentVault. Built with care by AnohbaJhd.</p>
@@ -63,5 +93,6 @@
 
   <script src="../js/sidebar.js"></script>
   <script src="../js/main.js"></script>
+</div>
 </body>
 </html>

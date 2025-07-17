@@ -1,50 +1,30 @@
-document.getElementById('signupForm').addEventListener('submit', function (e) {
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("signupForm");
+
+  document.getElementById("signupForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const username = document.getElementById('newUsername').value.trim();
-  const password = document.getElementById('newPassword').value.trim();
-  const confirmPassword = document.getElementById('confirmPassword').value.trim();
-  const errorMsg = document.getElementById('signupError');
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  if (!username || !password || !confirmPassword) {
-    showError('All fields are required');
-    return;
-  }
+  try {
+    const res = await fetch("http://localhost:3000/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password })
+    });
 
-  if (password.length < 6) {
-    showError('Password must be at least 6 characters');
-    return;
-  }
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "Signup failed");
 
-  if (password !== confirmPassword) {
-    showError('Passwords do not match');
-    return;
-  }
+    localStorage.setItem("user_id", data.user_id);
+    localStorage.setItem("loggedInUser", data.username);
 
-  let users = JSON.parse(localStorage.getItem('users')) || [];
+    alert("Signup successful ✅");
+    window.location.href = "dashboard.html";
 
-  if (users.some(user => user.username === username)) {
-    showError('Username already exists');
-    return;
-  }
-
-  users.push({ username, password });
-  localStorage.setItem('users', JSON.stringify(users));
-  localStorage.setItem('isLoggedIn', 'true');
-  localStorage.setItem('loggedInUser', username);
-
-  window.location.href = 'index.html';
-
-  function showError(msg) {
-    errorMsg.textContent = msg;
-    errorMsg.style.display = 'block';
+  } catch (err) {
+    alert("❌ " + err.message);
   }
 });
-
-// After localStorage.setItem('isLoggedIn', 'true');
-document.getElementById('notifyBox').classList.remove('hidden');
-
-setTimeout(() => {
-  document.getElementById('notifyBox').classList.add('hidden');
-}, 4000);
-
+});
